@@ -1,3 +1,6 @@
+using AlwaysEncrypted.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace AlwaysEncrypted
 {
     public class Program
@@ -8,6 +11,9 @@ namespace AlwaysEncrypted
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
             var app = builder.Build();
 
