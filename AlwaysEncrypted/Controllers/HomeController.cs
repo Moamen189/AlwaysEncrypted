@@ -1,4 +1,5 @@
-﻿using AlwaysEncrypted.Models;
+﻿using AlwaysEncrypted.Data;
+using AlwaysEncrypted.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,6 +8,8 @@ namespace AlwaysEncrypted.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _Context;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -15,7 +18,7 @@ namespace AlwaysEncrypted.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_Context.Employees.ToList());
         }
 
         public IActionResult Privacy()
