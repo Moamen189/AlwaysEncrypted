@@ -11,7 +11,6 @@ This repository provides guidance and code samples for implementing Always Encry
 - [Key Management](#key-management)
 - [Resources](#resources)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Prerequisites
 
@@ -80,6 +79,3 @@ Here are some helpful resources for working with Always Encrypted in MVC project
 
 Contributions to this repository are welcome! If you have code samples, improvements, or additional resources to share, please feel free to submit pull requests.
 
-## License
-
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
